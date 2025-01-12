@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #1f293a;
+}
+.container {
+  position: relative;
+  width: 256px;
+  height: 256px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container span {
+  position: absolute;
+  left: 13%;
+  top: 155px;
+  width: 32px;
+  height: 6px;
+  background: #2c4766;
+  border-radius: 8px;
+  transform-origin: 150px;
+  transform: scale(2.2) rotate(calc(var(--i) * (360deg / 50)));
+  animation: blink 3s linear infinite;
+  animation-delay: calc(var(--i) * (3s / 50));
+}
+@keyframes blink {
+  0% {
+    background: #0ef;
+  }
+  25% {
+    background: #2c4766;
+  }
+}
+.login-box {
+  position: absolute;
+  width: 400px;
+}
+form {
+  width: 100%;
+  padding: 0 50px;
+}
+h2 {
+  font-size: 2em;
+  color: #0ef;
+  text-align: center;
+}
+.input-box {
+  position: relative;
+  margin-top: 25px 0;
+}
+input {
+  margin-top: 20px;
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  border: 2px solid #2c4766;
+  outline: none;
+  border-radius: 40px;
+  font-size: 1em;
+  color: #fff;
+  padding: 0 20px;
+  transition: 0.5s ease;
+}
+input:focus {
+  border-color: #0ef;
+}
+label {
+  position: absolute;
+  top: 62%;
+  left: 22px;
+  transform: translateY(-50%);
+  font-size: 1em;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s ease;
+}
+input:focus ~ label {
+  top: 11px;
+  font-size: 0.8em;
+  background: #1f293a;
+  padding: 0 6px;
+  color: #0ef;
+}
+.forgot-pass {
+  margin: 10px 0 10px;
+  text-align: center;
+}
+.forgot-pass a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.85em;
+}
+.btn {
+  width: 100%;
+  height: 45px;
+  border: none;
+  outline: none;
+  background: #0ef;
+  color: #1f293a;
+  font-size: 1em;
+  border-radius: 40px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.signup-link {
+  margin: 20px 0 10px;
+  text-align: center;
+}
+.signup-link a {
+  text-decoration: none;
+  color: #0ef;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .login-box {
+    width: 300px;
+  }
+  form {
+    padding: 0 30px;
+  }
+  h2 {
+    font-size: 1.8em;
+  }
+  input {
+    font-size: 0.9em;
+    height: 45px;
+  }
+  label {
+    font-size: 0.9em;
+  }
+  .btn {
+    font-size: 0.9em;
+  }
+  .container span {
+    left: -4px; /* Dịch chuyển sang trái */
+    width: 20px; /* Giảm chiều rộng */
+    height: 3px; /* Giảm chiều cao */
+    transform: scale(1.8) rotate(calc(var(--i) * (360deg / 50))); /* Giảm tỷ lệ */
+  }
+}
+
+@media (max-width: 480px) {
+  .login-box {
+    width: 250px;
+  }
+  form {
+    padding: 0 20px;
+  }
+  h2 {
+    font-size: 1.5em;
+  }
+  input {
+    font-size: 0.8em;
+    height: 40px;
+  }
+  label {
+    font-size: 0.8em;
+  }
+  .btn {
+    font-size: 0.8em;
+  }
+  .container span {
+    left: -9.5%; /* Dịch chuyển sang trái */
+    width: 16px; /* Giảm chiều rộng hơn nữa */
+    height: 4px; /* Giảm chiều cao hơn nữa */
+    transform: scale(1.25) rotate(calc(var(--i) * (360deg / 50))); /* Giảm tỷ lệ */
+  }
+}
